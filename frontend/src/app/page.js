@@ -4,6 +4,8 @@ import Searchbar from "@/components/Searchbar";
 import Overview from "@/components/Overview";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Image from "@/components/Image";
+import HourlyCard from "@/components/HourlyCard";
 
 export default function Home() {
   const [currWeather, setCurrWeather] = useState(null);
@@ -59,7 +61,24 @@ export default function Home() {
           long={long}
           temp={temp}
         />
-        <div className="w-full h-full shadow-[0px_0_4px_2px_rgb(3,3,3,0.1)] border border-gray-200"></div>
+        <div className="w-full h-full shadow-[0px_0_4px_2px_rgb(3,3,3,0.1)] border border-gray-200">
+          <div className="w-full px-6 pt-6">
+            <p className="text-sm font-bold">Today's Forecast Details</p>
+            <div className="w-full grid grid-cols-6 text-gray-900 p-6 gap-3">
+              <HourlyCard time={1721768400} condition={"clear sky"} temp={25} />
+              <HourlyCard time={1721768400} condition={"clear sky"} temp={25} />
+              <HourlyCard time={1721768400} condition={"clear sky"} temp={25} />
+              <HourlyCard time={1721768400} condition={"clear sky"} temp={25} />
+              <HourlyCard time={1721768400} condition={"clear sky"} temp={25} />
+              <HourlyCard
+                time={1721768400}
+                condition={"clear sky"}
+                temp={25}
+                isEnd={true}
+              />
+            </div>
+          </div>
+        </div>
         <div className="w-full h-full shadow-[0px_0_4px_2px_rgb(3,3,3,0.1)] border border-gray-200"></div>
       </main>
       <side className="w-full h-full col-span-5 px-6 pt-10">
